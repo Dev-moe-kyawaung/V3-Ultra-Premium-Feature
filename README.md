@@ -101,6 +101,8 @@ cp .env.v3.example .env
 npm run dev:v3
 
 # Open http://localhost:3000
+````
+
 
 
 # 🚀 V3 Ultra Premium Features
