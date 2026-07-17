@@ -1,0 +1,92 @@
+// package.json - V3 Complete
+{
+  "name": "moe-kyaw-aung-portfolio-v3-ultra",
+  "homepage": "https://dev-moe-kyawaung.github.io/portfolio",
+  "version": "3.0.0",
+  "type": "module",
+  "description": "V3 Ultra Premium - Next Generation Portfolio with AI, 3D Graphics, and Advanced Features",
+  "author": "Moe Kyaw Aung <moekyawaung@programmer.net>",
+  "license": "MIT",
+  "keywords": [
+    "portfolio",
+    "react",
+    "android-developer",
+    "ai-powered",
+    "3d-graphics",
+    "blockchain",
+    "voice-commands",
+    "advanced-analytics"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "dev:v3": "vite --mode v3",
+    "build": "vite build",
+    "build:v3": "vite build --mode v3",
+    "preview": "vite preview",
+    "preview:v3": "vite preview --mode v3",
+    "predeploy": "npm run build:v3",
+    "deploy": "gh-pages -d dist",
+    "deploy:v3": "npm run build:v3 && gh-pages -d dist -b gh-pages",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "lint:fix": "eslint . --ext js,jsx --fix",
+    "test": "vitest",
+    "test:v3": "vitest run",
+    "analyze": "vite build --mode analyze",
+    "clean": "rm -rf dist node_modules/.vite",
+    "optimize": "npm run clean && npm run build:v3"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.0",
+    "framer-motion": "^11.0.3",
+    "react-icons": "^5.0.1",
+    "react-intersection-observer": "^9.8.0",
+    "tsparticles": "^3.0.3",
+    "@tsparticles/react": "^3.0.0",
+    "@tsparticles/slim": "^3.0.3",
+    "three": "^0.161.0",
+    "@react-three/fiber": "^8.15.0",
+    "@react-three/drei": "^9.96.0",
+    "qrcode.react": "^3.1.0",
+    "react-countup": "^6.5.0",
+    "react-type-animation": "^3.2.0",
+    "emailjs-com": "^3.2.0",
+    "react-helmet-async": "^2.0.4",
+    "swiper": "^11.0.7",
+    "react-syntax-highlighter": "^15.5.0",
+    "chart.js": "^4.4.1",
+    "react-chartjs-2": "^5.2.0",
+    "d3": "^7.9.0",
+    "react-hot-toast": "^2.4.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.55",
+    "@types/react-dom": "^18.2.19",
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.56.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "vite": "^5.1.0",
+    "vite-plugin-compression2": "^1.0.0",
+    "vite-plugin-pwa": "^0.19.0",
+    "rollup-plugin-visualizer": "^5.12.0",
+    "terser": "^5.27.0",
+    "gh-pages": "^6.1.1",
+    "vitest": "^1.2.0",
+    "@vitest/ui": "^1.2.0",
+    "lighthouse": "^11.5.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Dev-moe-kyawaung/portfolio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Dev-moe-kyawaung/portfolio/issues"
+  }
+}
