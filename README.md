@@ -88,8 +88,8 @@
 
 ```bash
 # Clone V3
-git clone -b v3-ultra https://github.com/Dev-moe-kyawaung/portfolio.git
-cd portfolio
+git clone -b v3-ultra https://github.com/Dev-moe-kyawaung/V3-Ultra-Premium-Feature.git
+cd V3-Ultra-Premium-Feature
 
 # Install dependencies
 npm install
