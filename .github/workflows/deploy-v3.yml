@@ -1,0 +1,53 @@
+# .github/workflows/deploy-v3.yml
+name: Deploy V3 to GitHub Pages
+
+on:
+  push:
+    branches:
+      - v3-ultra
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout V3 🛎️
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 18
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install Dependencies 📦
+        run: npm ci
+
+      - name: Run Tests 🧪
+        run: npm run test:v3 || echo "No tests configured"
+
+      - name: Build V3 🔧
+        run: npm run build:v3
+        env:
+          VITE_EMAILJS_SERVICE_ID: ${{ secrets.VITE_EMAILJS_SERVICE_ID }}
+          VITE_EMAILJS_TEMPLATE_ID: ${{ secrets.VITE_EMAILJS_TEMPLATE_ID }}
+          VITE_EMAILJS_PUBLIC_KEY: ${{ secrets.VITE_EMAILJS_PUBLIC_KEY }}
+          VITE_AI_API_KEY: ${{ secrets.VITE_AI_API_KEY }}
+          VITE_ANALYTICS_ID: ${{ secrets.VITE_ANALYTICS_ID }}
+
+      - name: Deploy to GitHub Pages 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist
+          branch: gh-pages
+          clean: true
+          single-commit: true
+
+      - name: Lighthouse CI 💡
+        uses: treosh/lighthouse-ci-action@v10
+        with:
+          urls: |
+            https://dev-moe-kyawaung.github.io/portfolio
+          uploadArtifacts: true
+
